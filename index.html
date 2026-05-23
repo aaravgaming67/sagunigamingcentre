@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Book PC and PlayStation gaming sessions at HotBox - PC & PS Gaming Lounge, Thane.">
+    <title>HotBox - PC & PS Gaming Lounge Thane</title>
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="HotBox home">
+        <span class="brand-mark">HB</span>
+        <span>
+          <strong>HotBox</strong>
+          <small>PC & PS Gaming Lounge</small>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#stations">Stations</a>
+        <a href="#book">Book</a>
+        <a href="#visit">Visit</a>
+      </nav>
+
+      <a class="nav-cta" href="#book">
+        <i data-lucide="calendar-check"></i>
+        Book Now
+      </a>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-media" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2000&auto=format&fit=crop" alt="Lounge atmosphere">
+        </div>
+        <div class="hero-content">
+          <h1>Premium Gaming.</h1>
+          <p>Experience elite performance in Thane's dedicated PC & PS5 lounge. Built for gamers, by gamers.</p>
+          <a href="#book" class="cta-primary">Reserve Your Station</a>
+        </div>
+      </section>
+
+      <section class="booking-section" id="book">
+        <div class="section-heading">
+          <p class="section-kicker">Ready to play?</p>
+          <h2>Book your session</h2>
+        </div>
+        
+        <form id="bookingForm" class="booking-form">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" required placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" required placeholder="10-digit number">
+          </div>
+          <div class="form-group">
+            <label for="setup">Setup Type</label>
+            <select id="setup">
+              <option value="Performance PC">Performance PC</option>
+              <option value="PS5 Bay">PS5 Bay</option>
+              <option value="Squad Block">Squad Block</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="game">Preferred Game</label>
+            <input type="text" id="game" placeholder="Valorant, FIFA, etc.">
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <label for="date">Date</label>
+              <input type="date" id="date" required>
+            </div>
+            <div class="form-group">
+              <label for="time">Start Time</label>
+              <input type="time" id="time" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <label for="hours">Duration (Hours)</label>
+              <input type="number" id="hours" min="1" max="8" value="1" required>
+            </div>
+            <div class="form-group">
+              <label for="players">Players</label>
+              <input type="number" id="players" min="1" max="10" value="1" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="notes">Special Requests</label>
+            <textarea id="notes" placeholder="Any specific requirements..."></textarea>
+          </div>
+          <div class="total-display">
+            <span>Estimated Total:</span>
+            <strong id="total">Rs 0</strong>
+          </div>
+          <button type="submit" class="submit-button">Confirm Booking</button>
+        </form>
+      </section>
+
+      <section class="list-section" aria-label="Your saved bookings">
+        <div class="section-heading">
+          <p class="section-kicker">Your slots</p>
+          <h2>Saved bookings</h2>
+        </div>
+        <div class="booking-list" id="bookingList"></div>
+      </section>
+
+      <section class="visit-section" id="visit">
+        <div class="visit-panel">
+          <p class="section-kicker">Visit HotBox</p>
+          <h2>PC & PS Gaming Lounge in Thane</h2>
+          <p>Update this section with the exact shop address, Google Maps link, and official phone number before going live.</p>
+          <div class="contact-grid">
+            <a href="tel:+910000000000">
+              <i data-lucide="phone"></i>
+              +91 00000 00000
+            </a>
+            <a href="https://maps.google.com/?q=Thane" target="_blank" rel="noreferrer">
+              <i data-lucide="map-pin"></i>
+              Thane, Maharashtra
+            </a>
+            <a href="mailto:bookings@hotboxgaming.in">
+              <i data-lucide="mail"></i>
+              bookings@hotboxgaming.in
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <footer class="site-footer">
+      <span>HotBox - PC & PS Gaming Lounge, Thane</span>
+      <a href="#book">Book a session</a>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
