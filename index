@@ -727,14 +727,13 @@
       .booking-actions button { flex: 1; }
       .site-footer { flex-direction: column; text-align: center; }
     }
-    @media (max-width: 480px) {
-      .stats-bar { grid-template-columns: 1fr 1fr; }
+    @media (max-width: 400px) {
+      .stats-bar { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- TOPBAR -->
   <div class="topbar">
     <div class="topbar-left">
       <a href="tel:+910000000000">📞 +91 00000 00000</a>
@@ -745,7 +744,6 @@
     </div>
   </div>
 
-  <!-- HEADER -->
   <header class="site-header">
     <a class="logo" href="#top">
       <div class="logo-icon">
@@ -770,7 +768,6 @@
 
   <main id="top">
 
-    <!-- HERO -->
     <section class="hero" aria-label="Hero">
       <div class="slide active" id="slide0">
         <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?auto=format&fit=crop&w=1800&q=85" alt="Gaming cafe setup">
@@ -794,12 +791,10 @@
       <div class="hero-dots" id="heroDots"></div>
     </section>
 
-    <!-- MARQUEE -->
     <div class="marquee-strip" aria-hidden="true">
       <div class="marquee-inner" id="marqueeInner"></div>
     </div>
 
-    <!-- STATS -->
     <div class="stats-bar">
       <div class="stat-item reveal">
         <span class="stat-num" data-target="15">0</span>
@@ -819,7 +814,6 @@
       </div>
     </div>
 
-    <!-- ABOUT -->
     <section id="about">
       <div class="about-grid">
         <div class="about-img reveal">
@@ -845,7 +839,6 @@
       </div>
     </section>
 
-    <!-- STATIONS -->
     <section class="stations-bg" id="stations">
       <p class="section-kicker reveal">Pick Your Lane</p>
       <h2 class="reveal">Setups That Match<br><span>The Session</span></h2>
@@ -880,7 +873,6 @@
       </div>
     </section>
 
-    <!-- BOOKING -->
     <section id="book">
       <div class="booking-wrap">
         <div class="booking-info reveal">
@@ -899,40 +891,48 @@
             <h3>Reserve Your Slot</h3>
             <form id="bookingForm">
               <div class="form-row two-col">
-                <label>Name<input id="name" name="name" type="text" placeholder="Your name" required></label>
-                <label>Phone<input id="phone" name="phone" type="tel" placeholder="10-digit mobile" pattern="[0-9 +()-]{8,16}" required></label>
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" required>
+                
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" placeholder="10-digit mobile" pattern="[0-9 +()-]{8,16}" required>
               </div>
               <div class="form-row two-col">
-                <label>
-                  Setup
-                  <select id="setup" name="setup" required>
-                    <option value="Gaming PC" data-rate="120" data-pricing="per-player">Gaming PC – Rs 120/hr/player</option>
-                    <option value="PS5 Bay" data-solo-rate="100" data-duo-rate="180" data-pricing="ps5">PS5 Bay – Rs 100 solo / Rs 180 duo</option>
-                    <option value="Squad Block" data-rate="450" data-pricing="flat">Squad Block – Rs 450/hr</option>
-                  </select>
-                </label>
-                <label>
-                  Game
-                  <select id="game" name="game" required>
-                    <option>Valorant</option>
-                    <option>GTA V</option>
-                    <option>FIFA / FC</option>
-                    <option>Tekken</option>
-                    <option>Call of Duty</option>
-                    <option>CS2</option>
-                    <option>WWE 2K</option>
-                    <option>Other / decide there</option>
-                  </select>
-                </label>
+                <label for="setup">Setup</label>
+                <select id="setup" name="setup" required>
+                  <option value="Gaming PC" data-rate="120" data-pricing="per-player">Gaming PC – Rs 120/hr/player</option>
+                  <option value="PS5 Bay" data-solo-rate="100" data-duo-rate="180" data-pricing="ps5">PS5 Bay – Rs 100 solo / Rs 180 duo</option>
+                  <option value="Squad Block" data-rate="450" data-pricing="flat">Squad Block – Rs 450/hr</option>
+                </select>
+                
+                <label for="game">Game</label>
+                <select id="game" name="game" required>
+                  <option>Valorant</option>
+                  <option>GTA V</option>
+                  <option>FIFA / FC</option>
+                  <option>Tekken</option>
+                  <option>Call of Duty</option>
+                  <option>CS2</option>
+                  <option>WWE 2K</option>
+                  <option>Other / decide there</option>
+                </select>
               </div>
               <div class="form-row three-col">
-                <label>Date<input id="date" name="date" type="date" required></label>
-                <label>Start Time<input id="time" name="time" type="time" min="10:00" max="23:30" required></label>
-                <label>Hours<input id="hours" name="hours" type="number" min="1" max="8" value="1" required></label>
+                <label for="date">Date</label>
+                <input id="date" name="date" type="date" required>
+                
+                <label for="time">Start Time</label>
+                <input id="time" name="time" type="time" min="10:00" max="23:30" required>
+                
+                <label for="hours">Hours</label>
+                <input id="hours" name="hours" type="number" min="1" max="8" value="1" required>
               </div>
               <div class="form-row two-col">
-                <label>Players<input id="players" name="players" type="number" min="1" max="8" value="1" required></label>
-                <label>Notes<input id="notes" name="notes" type="text" placeholder="Preferred seat or game"></label>
+                <label for="players">Players</label>
+                <input id="players" name="players" type="number" min="1" max="8" value="1" required>
+                
+                <label for="notes">Notes</label>
+                <input id="notes" name="notes" type="text" placeholder="Preferred seat or game">
               </div>
               <div class="total-row">
                 <span>Estimated Total</span>
@@ -945,14 +945,12 @@
       </div>
     </section>
 
-    <!-- SAVED BOOKINGS -->
     <section class="bookings-section" aria-label="Saved bookings">
       <p class="section-kicker reveal">Your Slots</p>
       <h2 class="reveal">Saved <span>Bookings</span></h2>
       <div class="booking-list" id="bookingList"></div>
     </section>
 
-    <!-- TESTIMONIALS -->
     <section class="testimonials-bg">
       <p class="section-kicker reveal" style="text-align:center">Happy Players</p>
       <h2 class="reveal" style="text-align:center">What Gamers <span>Say</span></h2>
@@ -973,7 +971,7 @@
         </div>
         <div class="testi-card reveal reveal-delay-2">
           <div class="testi-quote">"</div>
-          <div class="stars">★★★★☆</div>
+          <div class="stars">★★¼☆☆</div>
           <p class="testi-text">Booked a Squad Block for my birthday and it was epic. Easy booking, great setup, great vibes. Highly recommend for group sessions!</p>
           <div class="testi-author">Priya S.</div>
           <div class="testi-role">First-time Visitor</div>
@@ -981,7 +979,6 @@
       </div>
     </section>
 
-    <!-- VISIT -->
     <section id="visit">
       <div class="visit-grid">
         <div class="reveal">
@@ -1026,10 +1023,8 @@
 
   </main>
 
-  <!-- TOAST -->
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-copy">© 2025 Saguni Gaming Cafe. All rights reserved.</div>
     <div class="footer-links">
@@ -1053,7 +1048,7 @@
           apiKey: "AIzaSyCu3vD_tRWnH-ybL3ivd594Pj1rNZs7VJ8",
           authDomain: "sagunigaming-75752.firebaseapp.com",
           projectId: "sagunigaming-75752",
-          storageBucket: "sagunigaming-75752.firebasestorage.app",
+          storageBucket: "sagunigaming-75752.appspot.com",
           messagingSenderId: "537941448957",
           appId: "1:537941448957:web:ed790048aeef6867340694"
         };
@@ -1184,7 +1179,12 @@
     }
 
     function escHtml(v) {
-      return String(v).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");
+      return String(v)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
     }
 
     function bookingCode() { return `SG-${Math.random().toString(36).slice(2,6).toUpperCase()}-${Date.now().toString().slice(-4)}`; }
@@ -1207,20 +1207,6 @@
             <button type="button" data-delete="${escHtml(b.code)}">Cancel</button>
           </div>
         </article>`).join("");
-    }
-
-    function collectBooking() {
-      const d = new FormData(form);
-      return {
-        code: bookingCode(),
-        name: d.get("name").trim(), phone: d.get("phone").trim(),
-        setup: d.get("setup"), game: d.get("game"),
-        date: d.get("date"), time: d.get("time"),
-        hours: Number(d.get("hours")), players: Number(d.get("players")),
-        notes: d.get("notes").trim(),
-        estimate: getEstimate(), synced: false,
-        createdAt: new Date().toISOString()
-      };
     }
 
     async function saveOnline(booking) {
